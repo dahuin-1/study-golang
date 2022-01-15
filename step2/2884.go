@@ -1,15 +1,17 @@
 package main
 
-import (
+import "fmt"
+/*import (
 	"bufio"
 	"fmt"
 	"os"
-)
+)*/
 
 func main() {
 	var h, m int
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Fscanln(reader, &h, &m)
+	//reader := bufio.NewReader(os.Stdin)
+	//fmt.Fscanln(reader, &h, &m)
+	fmt.Scanf("%d %d",&h, &m)
 
 	if m-45 >= 0 {
 		fmt.Printf("%d %d\n", h, m-45)
