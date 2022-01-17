@@ -1,10 +1,11 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
+	"bufio"
 	"os"
 )
+
 func main() {
 	var t int
 	reader := bufio.NewReader(os.Stdin)
