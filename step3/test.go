@@ -1,24 +1,24 @@
 package main
 
 import (
-	"fmt"
 	"bufio"
+	"fmt"
 	"os"
 )
 
 func main() {
-	var length int
-
-	// use bufio for fast scan
+	var n, x int
 	reader := bufio.NewReader(os.Stdin)
 	writer := bufio.NewWriter(os.Stdout)
-	fmt.Fscanln(reader, &length)
-
-	var a, b int
-
-	for i:=0; i<length; i++ {
-		fmt.Fscanln(reader, &a, &b)
-		fmt.Fprintln(writer, a+b)
+	fmt.Fscanln(reader, &n, &x)
+	defer writer.Flush()
+    
+	var sequence = make([]int, n)
+	for i := range sequence {
+		fmt.Fscanf(reader, "%d ", &sequence[i])
+		if sequence[i] < x {
+			fmt.Fprintf(writer, "%d ", sequence[i])
+		}
 	}
-	writer.Flush()
+	fmt.Fprint(writer, "\n")
 }
